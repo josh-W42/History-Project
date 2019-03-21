@@ -1,0 +1,379 @@
+/*
+    Globals
+*/
+
+body {
+    background-image: url("../img/background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-color: #2B1E09;
+
+    font-family: "Arial Black";
+    text-shadow: 0px 0px 1px white;
+
+  margin: 0px;
+}
+
+/*
+    Header
+*/
+
+/*
+    Nav
+*/
+
+.mainNav {
+  z-index: 4;
+  height: 100%;
+  width: 20%;
+  left: 0%;
+  top: 0;
+  background-image: url("../img/backgroundNav.jpg");
+  background-position: center;
+  background-blend-mode: hard-light;
+  background-color: #5E3913;
+  position: fixed;
+  transition: 0.25s ease;
+  box-shadow: 5px 5px 50px black;
+  overflow-x: visible;
+}
+
+.closed {
+  left: -20%;
+}
+
+.navHeader {
+  width: 100%;
+  height: 10%;
+  background-color: #E7CA84;
+  top: 0;
+  position: absolute;
+  text-align: center;
+  z-index: 2;
+  background-image: url("../img/backgroundNav.jpg");
+  background-position: center;
+  background-blend-mode: darken;
+  box-shadow: 0px 1px 50px black;
+}
+
+.eventContainer {
+  overflow-y: scroll;
+  height: 90%;
+  margin-top: 20%;
+}
+
+/* width */
+.eventContainer::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.eventContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+.eventContainer::-webkit-scrollbar-thumb {
+  left: 100%;
+  background: #E7CA84;
+}
+
+/* Handle on hover */
+.eventContainer::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.eventMarker {
+  background: #E7CA84;
+  position: relative;
+  margin-bottom: 1%;
+  border-radius: 10px;
+  width: 30%;
+  min-height: 10%;
+  padding: 3%;
+  font-size: 0.75em;
+  font-weight: bolder;
+  box-shadow: 0px 0px 50px black;
+}
+
+.mainNav .eraBreakPoint {
+  margin-top: 20%;
+}
+
+.right {
+  top: 5%;
+  margin-left: 5%;
+}
+
+.left {
+  margin-left: 60%;
+}
+
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 50%;
+  width: 0;
+  z-index: 1;
+  left: 100%;
+  border: medium solid #E7CA84;
+  border-width: 15px 0px 15px 15px;
+  border-color: transparent transparent transparent #E7CA84;
+}
+
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 50%;
+  width: 0;
+  z-index: 1;
+  right: 100%;
+  border: medium solid #E7CA84;
+  border-width: 15px 15px 15px 0;
+  border-color: transparent #E7CA84 transparent transparent;
+}
+
+.eventMarker:hover {
+  background: #E7CA84;
+  box-shadow: 0px 0px 50px white;
+  font-size: 0.80em;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.timelineNav {
+  height: 100%;
+  width: 0;
+  border: 5px solid black;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+
+.navToggle {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 50px;
+  height: 50px;
+  border-spacing: 5px;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background-image: url("../img/backgroundNav.jpg");
+  background-position: center;
+  background-blend-mode: hard-light;
+  background-color: rgba(94, 57, 19);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.closed .navToggle {
+  left: 100%;
+  background-color: rgba(94, 57, 19);
+}
+
+.bar1,
+.bar2 {
+  margin-left: 20%;
+  margin-right: 20%;
+  width: 25px;
+  height: 4px;
+  background: black;
+}
+
+.navToggle:hover {
+  background: white;
+  transition: 0.25s ease;
+}
+
+.navToggle:hover .bar1,
+.navToggle:hover .bar2 {
+  background: black;
+  transition: 0.25s ease;
+}
+
+.bar1 {
+  margin-top: 30%;
+  transform: rotate(45deg);
+}
+
+.bar2 {
+  margin-top: 24%;
+  transform: rotate(-45deg);
+}
+
+/*
+    Main
+*/
+
+main .timelineNav {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  width: 0;
+}
+
+.mainHeader {
+  background-image: url("../img/background.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 500px;
+  margin: 0px;
+  max-width: 100%;
+  z-index: 4;
+  padding: 5%;
+  padding-left: 15%;
+  padding-right: 15%;
+  border-bottom: 5px solid black;
+  box-shadow: 0px 0px 50px black;
+}
+
+.mainHeader h3 {
+  text-align: right;
+  font-size: 20pt;
+  text-transform: full-width;
+  text-transform:  uppercase;
+}
+
+.mainHeader h3:nth-of-type(2) {
+  text-transform: capitalize;
+}
+
+main .eraBreakPoint {
+  padding-right: 5%;
+  text-align: right;
+  border-top: 2px solid white;
+}
+
+.event {
+  max-height: 5%;
+  width: 20%;
+  margin-left: 25%;
+  border: 1px solid black;
+  box-shadow: 1px 1px 5px black;
+  border-radius: 5%;
+  transition: 0.75s ease;
+  overflow: hidden;
+  background: white;
+  font-size: 1em;
+  text-align: center;
+  margin-bottom: 1%;
+}
+
+.eventPhoto {
+  width: 120%;
+  margin-left: -10%;
+}
+
+main .right {
+  margin-left: 60%;
+}
+
+.canOpen {
+  cursor: pointer;
+}
+
+.canOpen:hover:not(.open) {
+  box-shadow: 0px 0px 20px white;
+  text-transform: uppercase;
+}
+
+.canOpen:not(.open) {
+  animation-direction: alternate;
+  -webkit-animation: spin 2s infinite; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: spin 2s infinite; /* Firefox < 16 */
+}
+
+@keyframes spin {
+  25% {
+    transform: translateX(50px);
+    transform: translateY(25px);
+  }
+  25% {
+    transform: translateX(50px);
+    transform: translateY(-25px);
+  }
+  25% {
+    transform: translateX(50px);
+    transform: translateY(25px);
+  }
+  25% {
+    transform: translateX(50px);
+    transform: translateY(-25px);
+  }
+}
+
+.flyInNoScale {
+  -webkit-animation: flyIn 2s ease; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: flyIn 2s ease; /* Firefox < 16 */
+}
+
+@keyframes flyIn {
+  from {
+    position: relative;
+    opacity: 0;
+    top: 500px;
+  }
+  to {
+    position: relative;
+    opacity: 1;
+    top: 0px;
+  }
+}
+
+
+.open {
+  padding: 2%;
+  margin-left: 10%;
+  width: 30%;
+  height: auto;
+  background: white;
+  font-size: 1.0em;
+  border-radius: 25%;
+  font-weight: normal;
+}
+
+.open ul {
+  list-style: disc;
+  text-align: left;
+}
+
+.data > .open {
+  padding: 5%;
+  width: 40%;
+  margin-left: 50%;
+}
+
+
+.hiddenContent {
+  width: 100%;
+  font-size: 1em;
+  opacity: 1;
+  display: block;
+}
+
+.chartContainer {
+  width: 20vw;
+  display: flex;
+}
+
+.dataImm > .chartContainer,
+.dataMex > .chartContainer {
+  width: 35vw;
+}
+
+#meanLenImmigration,
+#lapdArrestsMex {
+  margin-left: 50%;
+}
+
+.hidden {
+  font-size: 1em;
+  display: none;
+  opacity: 0;
+}
